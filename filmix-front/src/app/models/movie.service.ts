@@ -25,4 +25,8 @@ export class MovieService {
     return this.http.get<Movie>(`${this.apiServerUrl}/api/movies/${id}`);
   }
 
+  public getUpcomingMovies(): Observable<Movie[]>{
+    return this.http.get<Movie[]>(`${this.apiServerUrl}/api/movies/upcoming-movies`)
+  }
+
 }

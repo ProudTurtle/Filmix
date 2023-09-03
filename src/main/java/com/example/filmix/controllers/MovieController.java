@@ -32,4 +32,9 @@ public class MovieController {
     public ResponseEntity<?> getMovieById(@PathVariable int id){
         return ResponseEntity.ok(movieService.findMovieById(id));
     }
+
+    @GetMapping("/upcoming-movies")
+    public ResponseEntity<?> getUpcomingMovies(){
+        return ResponseEntity.ok(movieService.findMovieByReleaseDate());
+    }
 }

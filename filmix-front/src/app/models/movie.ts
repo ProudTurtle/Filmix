@@ -12,4 +12,5 @@ export interface Movie{
   url: string;
   safeUrl: SafeResourceUrl | null
   category: Category;
+  originalTitle: string;
 }

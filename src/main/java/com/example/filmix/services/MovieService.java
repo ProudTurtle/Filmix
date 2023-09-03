@@ -8,6 +8,7 @@ import com.example.filmix.repositories.MovieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,5 +28,9 @@ public class MovieService {
 
     public Movie findMovieById(Integer movieId){
         return movieRepository.findById(movieId).orElseThrow(() -> new MovieNotFoundException("Nie znaleziono filmu"));
+    }
+
+    public List<Movie> findMovieByReleaseDate(){
+        return movieRepository.findAllByReleaseDateIsAfter(LocalDateTime.now());
     }
 }

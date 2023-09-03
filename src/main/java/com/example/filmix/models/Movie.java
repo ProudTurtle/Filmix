@@ -30,7 +30,7 @@ public class Movie {
     @Column(columnDefinition = "TINYINT(1)")
     private boolean isRecommended;
 
-    private int duration;
+    private Integer duration;
 
     @Lob
     @Column(columnDefinition = "LONGTEXT")
@@ -39,4 +39,6 @@ public class Movie {
     private String shortDescription;
 
     private String url;
+
+    private String originalTitle;
 }

@@ -5,7 +5,7 @@
     </div>
     <div class="info">
       <h1>{{movie?.title}}</h1>
-      <h5>The Lion King</h5>
+      <h5>{{movie?.originalTitle}}</h5>
       <p>Data premiery: {{movie?.releaseDate | date:'dd.MM.yyyy' }}</p>
       <p>Gatunek: {{movie?.category?.name}}</p>
       <p>{{movie?.shortDescription}}</p>

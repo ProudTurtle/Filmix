@@ -8,22 +8,36 @@ import {HttpErrorResponse} from "@angular/common/http";
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit{
-  public movies: Movie[];
+  public recommendedMovies: Movie[];
+  public upcomingMovies: Movie[];
 
 
 
   constructor(private movieService: MovieService) {
-    this.movies = [];
+    this.recommendedMovies = [];
+    this.upcomingMovies = [];
   }
 
   ngOnInit(): void {
     this.getRecommendedMovie()
+    this.getUpcommingMovies();
   }
 
   public getRecommendedMovie(): void {
     this.movieService.getRecommendedMovies().subscribe(
       (response:Movie[]) => {
-        this.movies = response;
+        this.recommendedMovies = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      }
+    )
+  }
+
+  public getUpcommingMovies(): void{
+    this.movieService.getUpcomingMovies().subscribe(
+      (response:Movie[]) => {
+        this.upcomingMovies = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message)

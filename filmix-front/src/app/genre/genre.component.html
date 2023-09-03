@@ -13,10 +13,11 @@
   <div class="title-panel">Filmy z gatunku: {{activeCategory?.name}}</div>
   <div class="movies">
 
-    <a href="#" class="movie" *ngFor="let movie of movies">
+    <a [routerLink]="['/movie', movie.id]" class="movie" *ngFor="let movie of movies">
       <img src="/assets/images/posters/{{ movie.id }}.jpg" />
       <div class="title">{{movie.title}}</div>
-      <div class="subtitle">{{formatDuration(movie.duration)}}</div>
+      <div class="subtitle" *ngIf="movie.duration ">{{formatDuration(movie.duration)}}</div>
+      <div class="subtitle" *ngIf="!movie.duration">Premiera: {{movie.releaseDate | date:'dd.MM.yyyy'}}</div>
     </a>
 
   </div>
