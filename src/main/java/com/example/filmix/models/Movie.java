@@ -26,4 +26,17 @@ public class Movie {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @Column(columnDefinition = "TINYINT(1)")
+    private boolean isRecommended;
+
+    private int duration;
+
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
+    private String description;
+
+    private String shortDescription;
+
+    private String url;
 }
