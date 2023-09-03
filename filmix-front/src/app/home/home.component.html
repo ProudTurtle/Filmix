@@ -1,0 +1,76 @@
+<div class="sectionPanel">
+
+  <div class="incoming-movies">
+    <div class="title-panel">Nadchodzące filmy:</div>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+    <a href="#" class="movie">
+      <img src="/assets/images/header/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg"/>
+      <div class="title">Król Lew</div>
+      <div class="subtitle">210 minut</div>
+    </a>
+
+
+  </div>
+
+
+
+  <div class="recommended-movies">
+
+    <div class="title-panel">Rekomendowane filmy:</div>
+
+    <a [routerLink]="['/movie', movie.id]" *ngFor="let movie of movies" class="recommended-movie"  [ngStyle]="{ 'background-image': 'url(/assets/images/posters/' + movie.id + '.jpg)' }">
+      <div class="description">{{movie.title}}</div>
+    </a>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="content">
+  <div class="mainContent">
+    <div class="poster">
+      <img src="/assets/images/posters/{{movie?.id}}.jpg" />
+    </div>
+    <div class="info">
+      <h1>{{movie?.title}}</h1>
+      <h5>The Lion King</h5>
+      <p>Data premiery: {{movie?.releaseDate | date:'dd.MM.yyyy' }}</p>
+      <p>Gatunek: {{movie?.category?.name}}</p>
+      <p>{{movie?.shortDescription}}</p>
+    </div>
+  </div>
+  <div class="rating">
+    <div class="mainRating">Ocena</div>
+    <div class="score">4,7</div>
+    <div class="scoreCount">Liczba ocen: 3</div>
+    <p>Twoja ocena</p>
+    <div class="star"><img src="assets/images/stars/star.png"><img
+      src="assets/images/stars/star.png"><img
+      src="assets/images/stars/star.png"><img
+      src="assets/images/stars/star.png"><img
+      src="assets/images/stars/star.png"></div>
+  </div>
+</div>
+<div class="content-box">
+  <div class="title">Trailer</div>
+  <div class="video">
+    <iframe width="560" height="315" [src]="movie?.safeUrl"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="content-box">
+  <div class="title">Opis</div>
+  {{movie?.description}}
+</div>

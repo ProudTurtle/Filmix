@@ -1,0 +1,23 @@
+<div class="genre-list">
+  <button
+    *ngFor="let category of categories"
+    class="genre-button"
+    [ngClass]="{'active': category === activeCategory}"
+    (click)='setActiveCategory(category)'
+  >
+    {{category.name}}
+  </button>
+</div>
+
+<div *ngIf="activeCategory">
+  <div class="title-panel">Filmy z gatunku: {{activeCategory?.name}}</div>
+  <div class="movies">
+
+    <a href="#" class="movie" *ngFor="let movie of movies">
+      <img src="/assets/images/posters/{{ movie.id }}.jpg" />
+      <div class="title">{{movie.title}}</div>
+      <div class="subtitle">{{formatDuration(movie.duration)}}</div>
+    </a>
+
+  </div>
+</div>
