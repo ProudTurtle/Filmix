@@ -28,6 +28,20 @@ export class MovieDetailComponent implements OnInit {
     }
   }
 
+  onStarClick(index: number, id: number | undefined) {
+    console.log(id)
+      this.movieService.addRate(id, index+1).subscribe(
+        (resData ) => {
+          // @ts-ignore
+          this.movie = resData;
+          console.log(resData)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+  }
+
   public getMovieById(id: number): void {
     this.movieService.getMovieById(id).subscribe(
       (response: Movie) => {

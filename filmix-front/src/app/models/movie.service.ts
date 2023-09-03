@@ -29,4 +29,12 @@ export class MovieService {
     return this.http.get<Movie[]>(`${this.apiServerUrl}/api/movies/upcoming-movies`)
   }
 
+  public addRate(movieId: number | undefined, rate: number) {
+    const body = {
+      movieId: movieId,
+      rate: rate
+    };
+    return this.http.post(`${this.apiServerUrl}/api/add-rate`, body)
+  }
+
 }

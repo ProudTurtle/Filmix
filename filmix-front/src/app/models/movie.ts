@@ -13,4 +13,6 @@ export interface Movie{
   safeUrl: SafeResourceUrl | null
   category: Category;
   originalTitle: string;
+  rate: number | null;
+  rateCount: number | null;
 }

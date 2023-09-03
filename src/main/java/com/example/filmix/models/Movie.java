@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Setter
@@ -41,4 +42,29 @@ public class Movie {
     private String url;
 
     private String originalTitle;
+
+    @OneToMany(mappedBy = "movie")
+    private List<MovieRating> movieRatingsList;
+
+    @Transient
+    private double rate;
+
+    @Transient
+    private int rateCount;
+
+    public int getRateCount() {
+        return movieRatingsList.size();
+    }
+
+    public double getRate() {
+        if(movieRatingsList == null || movieRatingsList.isEmpty()){
+            return 0.0;
+        }
+        double sum = 0.0;
+        for(MovieRating movieRating : movieRatingsList){
+            sum += movieRating.getRate();
+        }
+
+        return (double) Math.round(sum / movieRatingsList.size() * 10) /10;
+    }
 }

@@ -1,7 +1,7 @@
 <div class="content">
   <div class="mainContent">
     <div class="poster">
-      <img src="/assets/images/posters/{{movie?.id}}.jpg" />
+      <img src="/assets/images/posters/{{movie?.id}}.jpg"/>
     </div>
     <div class="info">
       <h1>{{movie?.title}}</h1>
@@ -13,16 +13,17 @@
   </div>
   <div class="rating">
     <div class="mainRating">Ocena</div>
-    <div class="score">4,7</div>
-    <div class="scoreCount">Liczba ocen: 3</div>
+    <div class="score">{{movie?.rate}}</div>
+    <div class="scoreCount">Liczba ocen: {{movie?.rateCount}}</div>
     <p>Twoja ocena</p>
     <div class="star">
       <span
-      *ngFor="let star of stars; let i = index"
-      [ngClass]="{ 'filled': i < hoveredIndex, 'hovered': i === hoveredIndex }"
-      (mouseenter)="hoveredIndex = i"
-      (mouseleave)="hoveredIndex = -1"
-    >
+        *ngFor="let star of stars; let i = index"
+        [ngClass]="{ 'filled': i < hoveredIndex, 'hovered': i === hoveredIndex }"
+        (mouseenter)="hoveredIndex = i"
+        (mouseleave)="hoveredIndex = -1"
+        (click)="onStarClick(i, movie?.id)"
+      >
         <fa-icon [icon]="starIcon"></fa-icon>
   </span>
     </div>
