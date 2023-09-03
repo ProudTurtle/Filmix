@@ -11,6 +11,8 @@ import { BannerComponent } from './banner/banner.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { StarsComponent } from './stars/stars.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +22,13 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     HeadComponent,
     FooterComponent,
     MovieDetailComponent,
+    StarsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

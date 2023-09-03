@@ -16,11 +16,16 @@
     <div class="score">4,7</div>
     <div class="scoreCount">Liczba ocen: 3</div>
     <p>Twoja ocena</p>
-    <div class="star"><img src="assets/images/stars/star.png"><img
-      src="assets/images/stars/star.png"><img
-      src="assets/images/stars/star.png"><img
-      src="assets/images/stars/star.png"><img
-      src="assets/images/stars/star.png"></div>
+    <div class="star">
+      <span
+      *ngFor="let star of stars; let i = index"
+      [ngClass]="{ 'filled': i < hoveredIndex, 'hovered': i === hoveredIndex }"
+      (mouseenter)="hoveredIndex = i"
+      (mouseleave)="hoveredIndex = -1"
+    >
+        <fa-icon [icon]="starIcon"></fa-icon>
+  </span>
+    </div>
   </div>
 </div>
 <div class="content-box">

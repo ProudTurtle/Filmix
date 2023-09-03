@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../models/movie";
 import {MovieService} from "../models/movie.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {faStar, IconDefinition} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-movie-detail',
@@ -11,8 +13,12 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 })
 export class MovieDetailComponent implements OnInit {
   public movie: Movie | undefined;
+  hoveredIndex = -1;
+  stars = [0, 1, 2, 3, 4];
+  @Input() starIcon: IconDefinition;
 
   constructor(private movieService: MovieService, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
+    this.starIcon = faStar;
   }
 
   ngOnInit(): void {

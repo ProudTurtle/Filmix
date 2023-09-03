@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../models/movie";
 import {MovieService} from "../models/movie.service";
 import {HttpErrorResponse} from "@angular/common/http";
@@ -13,9 +13,11 @@ export class HomeComponent implements OnInit{
 
 
 
+
   constructor(private movieService: MovieService) {
     this.recommendedMovies = [];
     this.upcomingMovies = [];
+
   }
 
   ngOnInit(): void {
