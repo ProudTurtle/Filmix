@@ -56,4 +56,9 @@ export class MovieDetailComponent implements OnInit {
   }
 
 
+  public isMovieOut(): boolean {
+    // @ts-ignore
+    return Date.parse(this.movie?.releaseDate) < Date.now()
+  }
+
 }

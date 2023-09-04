@@ -12,7 +12,8 @@ import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { StarsComponent } from './stars/stars.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TopMoviesComponent } from './top-movies/top-movies.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     FooterComponent,
     MovieDetailComponent,
     StarsComponent,
+    TopMoviesComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,10 +15,11 @@
 
   <div class="recommended-movies">
 
-    <div class="title-panel">Rekomendowane filmy:</div>
+    <div class="title-panel">Krytycy rekomendują:</div>
 
     <a [routerLink]="['/movie', movie.id]" *ngFor="let movie of recommendedMovies" class="recommended-movie"  [ngStyle]="{ 'background-image': 'url(/assets/images/posters/' + movie.id + '.jpg)' }">
       <div class="description">{{movie.title}}</div>
+      <div class="rate">{{movie.rate}}</div>
     </a>
 
 

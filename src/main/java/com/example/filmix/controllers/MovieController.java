@@ -37,4 +37,9 @@ public class MovieController {
     public ResponseEntity<?> getUpcomingMovies(){
         return ResponseEntity.ok(movieService.findMovieByReleaseDate());
     }
+
+    @GetMapping("/get-top")
+    public ResponseEntity<?> getTop10Movies(){
+        return ResponseEntity.ok(movieService.findTop10());
+    }
 }

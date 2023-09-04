@@ -9,8 +9,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -32,5 +35,13 @@ public class MovieService {
 
     public List<Movie> findMovieByReleaseDate(){
         return movieRepository.findAllByReleaseDateIsAfter(LocalDateTime.now());
+    }
+
+    public List<Movie> findTop10(){
+      List<Movie> allMovies = movieRepository.findAll();
+        return allMovies.stream()
+              .sorted(Comparator.comparing(Movie::getRate).reversed())
+              .limit(10)
+              .toList();
     }
 }

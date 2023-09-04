@@ -21,4 +21,5 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
     Movie findById(int id);
 
     List<Movie> findAllByReleaseDateIsAfter(LocalDateTime localDateTime);
+
 }

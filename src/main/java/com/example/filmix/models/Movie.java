@@ -1,5 +1,6 @@
 package com.example.filmix.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +45,7 @@ public class Movie {
     private String originalTitle;
 
     @OneToMany(mappedBy = "movie")
+    @JsonIgnore
     private List<MovieRating> movieRatingsList;
 
     @Transient
@@ -67,4 +69,5 @@ public class Movie {
 
         return (double) Math.round(sum / movieRatingsList.size() * 10) /10;
     }
+
 }

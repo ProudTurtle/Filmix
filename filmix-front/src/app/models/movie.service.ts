@@ -37,4 +37,8 @@ export class MovieService {
     return this.http.post(`${this.apiServerUrl}/api/add-rate`, body)
   }
 
+  public getTop10(): Observable<Movie[]>{
+    return this.http.get<Movie[]>(`${this.apiServerUrl}/api/movies/get-top`)
+  }
+
 }
